@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio#3</title>
+</head>
+<body onload="ejercicio();">
+
+
+
+
+  <script type="text/javascript">
+
+
+
+
+
+
+function ejercicio() {
+
+let positivos =0;
+let negativos =0;
+let ceros =0;
+
+let totalElementos = prompt('ingresa un numero de elementos que tendra el arreglo!!!');
+let posicion=0;
+
+ let arreglo =[];
+
+      for (var i = 0; i < totalElementos; i++) {
+        posicion=i+1;
+        arreglo[i] = prompt('ingresa un valor para la posicion ['+posicion+']');
+        console.log(arreglo[i]);
+        }
+
+        for (var i = 0; i < totalElementos; i++) {
+
+              if (parseInt(arreglo[i])<0)
+              {
+                negativos++;
+              }
+
+              if (parseInt(arreglo[i])==0)
+              {
+                ceros++;
+              }
+              if (parseInt(arreglo[i])>0)
+              {
+                positivos++;
+              }
+
+        }
+
+        console.log('negativos: '+negativos);
+        console.log('ceros: '+ceros);
+        console.log('positivos: '+positivos);
+
+
+      document.open();
+
+      document.write("EJERCICIO# 3: <br>  Función: contador. <br>Parámetros: Un arreglo de números.<br> Regresa: La cantidad de números negativos en el arreglo, la cantidad de 0's, y la cantidad de valores mayores a 0 en el arreglo.");
+
+      document.write("<br>");
+      document.write("<h2> Cantidad de Numeros Positivos en el Arreglo ingresados por el usuario:.."+positivos+"</h2>");
+      document.write("<br>");
+
+      document.write("<br>");
+      document.write("<h2> Cantidad de Numeros Ceros en el Arreglo ingresados por el usuario:.."+ceros+"</h2>");
+      document.write("<br>");
+
+      document.write("<br>");
+      document.write("<h2> Cantidad de Numeros Positivos en el Arreglo ingresados por el usuario:.."+negativos+"</h2>");
+      document.write("<br>");
+
+
+
+
+
+
+
+
+      document.close();
+    }
+
+
+
+  </script>
+</body>
+</html>
