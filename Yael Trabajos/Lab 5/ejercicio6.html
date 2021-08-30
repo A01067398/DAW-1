@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ejercicio#2</title>
+</head>
+<body onload="solucion();">
+
+
+
+
+	<script type="text/javascript">
+
+    var persona = {
+  nombre: ['Danilo', 'Vivas'],
+  edad: 15,
+  genero: 'masculino',
+  intereses: ['Pokemon Go', 'Anime'],
+  informacion: function () {
+    alert(this.nombre[0] + '' + this.nombre[1] + ' tiene ' + this.edad + ' años. Le gusta ' + this.intereses[0] + ' y ' + this.intereses[1] + '.');
+  },
+  saludo: function(usuario) {
+    alert('Hola, me da mucho gusto saludarte querid@ '+ usuario);
+  }
+};
+
+
+function solucion() {
+
+let nombre = prompt('Hola! cual es tu nombre?...');
+persona.saludo(nombre);
+
+      document.open();
+result = confirm("¿Quieres conocer alguns detalles del usuario actual?");
+if (result) {
+persona.informacion();
+}
+
+
+
+
+      document.write("Ejercicio# 6. <br> Crea una solución para un problema de tu elección (puede ser algo relacionado con tus intereses, alguna problemática que hayas identificado en algún ámbito, un problema de programación que hayas resuelto en otro lenguaje, un problema de la ACM, entre otros). El problema debe estar descrito en un documento HTML, y la solución implementada en JavaScript, utilizando al menos la creación de un objeto, el objeto además de su constructor deben tener al menos 2 métodos. Muestra los resultados en el documento HTML. </p>  <br>");
+
+
+
+      // document.write(" <p>This example requires you to enter commands in your browser's JavaScript console (see <a href='https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools'>What are browser developer tools</a> for more information).</p>");
+
+
+        document.write("datos de objeto   Nombre del Objeto:  PERSONA");
+        document.write("<br>");
+        document.write("<h3> nombre persona: "+" "+persona.nombre+"<h3>");
+        document.write("<h3> edad persona: "+" "+persona.edad+"<h3>");
+        document.write("<h3> genero persona: "+" "+persona.genero+"<h3>");
+        document.write("<h3> interes 1 persona: "+" "+persona.intereses[0]+"<h3>");
+        document.write("<h3> interes 2 persona: "+" "+persona.intereses[1]+"<h3>");
+          document.write("<br>");
+        document.write("datos de objeto   funcion 1 del Objeto:  INFORMACION");
+          document.write("<br>");
+        document.write("datos de objeto   funcion 2 del Objeto:  SALUDO");
+
+      document.close();
+
+
+
+
+};
+
+
+
+
+	</script>
+</body>
+</html>

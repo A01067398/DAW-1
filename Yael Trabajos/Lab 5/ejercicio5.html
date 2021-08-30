@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ejercicio#5</title>
+</head>
+<body onload="inverso();">
+
+	<script type="text/javascript">
+
+
+function inverso() {
+
+let cifra = prompt('ingrese una cantidad:.... ');
+
+//console.log(cifra);
+
+      document.open();
+      document.write("5:<br><br> Función: inverso. <br><br>Parámetros: Un número. <br><br>Regresa: El número con sus dígitos en orden inverso.");
+      document.write("<h2> Numero ingresado por el usuario: .....  " + cifra + "</h2>");
+
+      document.write("<br>");
+      document.write("<h2> funcion inversa la cifra en orden inverso seria...."+Number(cifra.toString().split('').reverse().join(''))+"</h2>");
+      document.write("<br>");
+
+
+      document.close();
+    }
+
+
+
+	</script>
+</body>
+</html>

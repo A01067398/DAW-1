@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio#4</title>
+</head>
+<body onload="promedios();">
+
+
+  <script type="text/javascript">
+
+function promedios() {
+
+let positivos =0;
+let negativos =0;
+let ceros =0;
+let filas = prompt('ingresa un numero de columnas que tendra el arreglo!!!');
+let columnas = prompt('ingresa un numero de columnas que tendra el arreglo!!!');
+var arreglo = [['d','d']];
+arreglo [0][1] = 47;
+arreglo [1][0] = 74;
+console.log(arreglo [0][1]);
+console.log(arreglo [1][0]);
+
+
+
+
+let posicion=0;
+let totalElementos=0;
+
+var arrayBidimensional= new Array(4);
+for (var i = 0; i < 4; i++) {
+  arrayBidimensional[i] = new Array(2);
+}
+
+
+
+
+
+
+      for (var i = 0; i < totalElementos; i++) {
+        posicion=i+1;
+        arreglo[i] = prompt('ingresa un valor para la posicion ['+posicion+']');
+        console.log(arreglo[i]);
+        }
+
+        for (var i = 0; i < totalElementos; i++) {
+
+              if (parseInt(arreglo[i])<0)
+              {
+                negativos++;
+              }
+
+              if (parseInt(arreglo[i])==0)
+              {
+                ceros++;
+              }
+              if (parseInt(arreglo[i])>0)
+              {
+                positivos++;
+              }
+
+        }
+
+        console.log('negativos: ');
+        console.log('ceros: '+ceros);
+        console.log('positivos: '+positivos);
+
+
+      document.open();
+
+      document.write("Función: promedios. Parámetros: Un arreglo de arreglos de números. Regresa: Un arreglo con los promedios de cada uno de los renglones de la matriz.");
+
+      document.write("<br>");
+      document.write("<h2> Cantidad de Numeros Positivos en el Arreglo ingresados por el usuario:.."+positivos+"</h2>");
+      document.write("<br>");
+
+      document.write("<br>");
+      document.write("<h2> Cantidad de Numeros Ceros en el Arreglo ingresados por el usuario:.."+ceros+"</h2>");
+      document.write("<br>");
+
+      document.write("<br>");
+      document.write("<h2> Cantidad de Numeros Positivos en el Arreglo ingresados por el usuario:.."+negativos+"</h2>");
+      document.write("<br>");
+
+
+
+
+
+
+
+
+      document.close();
+    }
+
+
+
+  </script>
+</body>
+</html>
