@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ejercicio#2</title>
+</head>
+<body onload="ejercicio();">
+
+
+
+
+	<script type="text/javascript">
+
+var startDate = new Date();
+// Do your operations
+
+
+
+		let numero1 = Math.floor(Math.random() * 10);
+		let numero2 = Math.floor(Math.random() * 10);
+		let suma1 = numero1 + numero2;
+
+		var segundos = 0;
+window.setInterval(function(){
+  segundos++;
+},1000);
+
+let respuesta_user = prompt('cuanto es: .... ' + numero1  + ' + ' + numero2);
+
+
+
+ console.log(segundos);
+
+
+function ejercicio() {
+      document.open();
+
+      document.write("<h1>Ejercicio#2</h1><p>2:Entrada: Usando un prompt se pide el resultado de la suma de 2 números generados de manera aleatoria. <br>Salida: La página debe indicar si el resultado fue correcto o incorrecto, y el tiempo que tardó el usuario en escribir la respuesta. </p>  <br>");
+
+      document.write("<h2> cuanto es: ..... : " + numero1 + " + " + numero2 +" </h2>");
+
+      document.write("<br>");
+
+      document.write("<h2> Respuesta ingresada por el usuario:.."+respuesta_user+"</h2>");
+      document.write("<br>");
+      document.write("<h3> Respuesta generada por el sistema:..."+suma1+"</h3>");
+
+
+var endDate   = new Date();
+var seconds = (endDate.getTime() - startDate.getTime()) / 1000;
+
+	document.write("<br>");
+	document.write("<h3> El usuario tardo un tiempo de:..."+seconds+" segundos para contestar....</h3>");
+
+
+
+       if (parseInt(suma1)==parseInt(respuesta_user)) {
+	document.write("<br>");
+       document.write("<h3> la respuesta del usuario es correcta </h3>");
+       }
+       else{
+       document.write("<br>");
+	document.write("<h3> la respuesta del usuario es INcorrecta </h3>");
+
+       }
+
+
+
+
+
+      document.close();
+    }
+
+
+
+	</script>
+</body>
+</html>
