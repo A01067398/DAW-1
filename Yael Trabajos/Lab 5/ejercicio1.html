@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ejercicio#1</title>
+</head>
+<body onload="generar_tabla();">
+
+
+
+
+	<script type="text/javascript">
+
+let dato = prompt('ingresa un numero!!!');
+ //alert(dato);
+ console.log(dato);
+
+
+function generar_tabla() {
+      document.open();
+
+      document.write("<h1>Ejercicio#1</h1><p>1:Entrada: un número pedido con un prompt. Salida: Una tabla con los números del 1 al número dado con sus cuadrados y cubos. Utiliza document.write para producir la salida </p>  <br>");
+
+       document.write("<h2> Dato dado por el usuario:"+dato+"</h2>");
+
+      for (var i = 0; i < dato; i++) {
+ var x = i+1;
+// var y = x*x;
+// var z = x*x*x;
+
+   document.write("<h4>"+x+" cuadrado: "+ Math.pow(x,2)+", cubo: " + Math.pow(x,3) + "</h4>");
+
+
+}
+
+      document.close();
+    }
+
+
+
+	</script>
+</body>
+</html>
