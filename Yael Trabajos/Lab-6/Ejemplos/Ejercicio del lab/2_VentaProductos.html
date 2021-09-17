@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        .espacio {
+            padding-top: 10px;
+        }
+
+        input select {
+            width: 300px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div>
+        <form>
+            <div class="espacio">
+                <label>Producto</label><br>
+                <select name="producto" id="producto" onchange="cambiar(this.value)">
+                    <option value="">Seleccionar producto</option>
+                    <option value="Polo">Polo $30</option>
+                    <option value="Pantalon">Pantalón $50</option>
+                    <option value="Zapato">Zapato $80</option>
+                </select>
+            </div>
+            <div class="espacio">
+                <label>Cantidad</label><br>
+                <input type="number" name="cantidad" id="cantidad" min="0" value="0" onkeyup="cambiar_cantidad(this.value)">
+            </div>
+            <div class="espacio">
+                <label>Descuento</label><br>
+                <input type="number" name="descuento" id="descuento" value="0" readonly> %
+            </div>
+            <div class="espacio">
+                <label>IVA</label><br>
+                <input type="number" name="iva" id="iva" value="0" step="0.01" readonly>
+            </div>
+            <div class="espacio">
+                <label>Total a pagar</label><br>
+                <input type="number" name="total" id="total" value="0" step="0.01" readonly>
+            </div>
+            <div class="espacio">
+                <button type="submit" onclick="pagar()">Pagar</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function pagar() {
+            var cantidad = parseInt(document.getElementById("cantidad").value);
+            if(cantidad > 0){
+                alert("Pago completado!!!");
+            }else{
+                alert("La cantidad debe ser mayor a 0");
+            }            
+        }
+
+        function cambiar_cantidad(value) {
+            if (value == "") {
+                document.getElementById("cantidad").value = 0;
+            } else {
+                calcular();
+            }
+        }
+
+        function cambiar(value) {
+            switch (value) {
+                case "Polo":
+                    document.getElementById("descuento").value = 10;
+                    break;
+                case "Pantalon":
+                    document.getElementById("descuento").value = 20;
+                    break;
+                case "Zapato":
+                    document.getElementById("descuento").value = 30;
+                    break;
+                default:
+                    document.getElementById("descuento").value = 0;
+                    document.getElementById("total").value = 0;
+                    break;
+            }
+            calcular();
+        }
+
+        function calcular() {
+            var producto = document.getElementById("producto").value;
+            var cantidad = parseInt(document.getElementById("cantidad").value);
+            var descuento = parseInt(document.getElementById("descuento").value) / 100;
+            var total = 0;
+            var iva = 0;
+            switch (producto) {
+                case "Polo":
+                    total = 30 * cantidad;
+                    break;
+                case "Pantalon":
+                    total = 50 * cantidad;
+                    break;
+                case "Zapato":
+                    total = 80 * cantidad;
+                    break;
+                default:
+                    break;
+            }
+            total = total - descuento * total;
+            iva = total * 0.16;
+            total = total + iva;
+            document.getElementById("total").value = total;
+            document.getElementById("iva").value = iva;
+        }
+    </script>
+
+</body>
+
+</html>
