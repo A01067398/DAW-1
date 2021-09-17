@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .espacio {
+            padding-top: 10px;
+        }
+
+        input {
+            width: 50%;
+            color: blue;
+        }
+
+        button {
+            background-color: rgb(25, 103, 167);
+            color: rgb(255, 255, 255);
+        }
+
+        .container {
+            padding-left: 10%;
+            padding-right: 10%;
+            width: 100%;
+        }
+
+        .container table {
+            width: 80%;
+        }
+
+        #div1 {
+            width: 125px;
+            height: 70px;
+            padding: 10px;
+            border: 1px solid #aaaaaa;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <p>Arrastra a la profesora al rectángulo </p>
+
+        <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <br>
+        <img id="drag1" src="profesora.jpg" draggable="true" ondragstart="drag(event)">
+
+        <h3 id="color">Registro de Alumnos</h3>
+
+        <form action="#">
+            <div class="espacio">
+                <label>Código </label><br>
+                <abbr title="El código es requerido y identifica al alumno">
+                    <input type="text" name="codigo" id="codigo" onkeyup="cambiar_color()" required>
+                </abbr>
+            </div>
+            <div class="espacio">
+                <label>Nombre</label><br>
+                <input type="text" name="nombre" id="nombre" required>
+            </div>
+            <div class="espacio">
+                <label>Nota 1</label><br>
+                <input type="number" name="nota1" id="nota1" min="0" max="10" step="0.1" required>
+            </div>
+            <div class="espacio">
+                <label>Nota 2</label><br>
+                <input type="number" name="nota2" id="nota2" min="0" max="10" step="0.1" required>
+            </div>
+            <div class="espacio">
+                <label>Nota 3</label><br>
+                <input type="number" name="nota3" id="nota3" min="0" max="10" step="0.1" required>
+            </div>
+            <div class="espacio">
+                <input type="submit" value="Regitrar" onclick="return registrar()">
+            </div>
+        </form>
+
+        <h2>Lista de Alumnos Registrados</h2>
+        <div id="demo">
+
+        </div>
+    </div>
+
+    <script>
+
+        setInterval(function () { alert("Pasaron 30 segundos"); }, 30000);
+        setTimeout(function () { alert("Hola, soy Timeout. Cada 30 segundo saldrá el Interval"); }, 10000);
+
+        class Alumno {
+            constructor(codigo, nombre, nota1, nota2, nota3) {
+                this.codigo = codigo;
+                this.nombre = nombre;
+                this.nota1 = nota1;
+                this.nota2 = nota2;
+                this.nota3 = nota3;
+            }
+
+            promedio() {
+                return (this.nota1 + this.nota2 + this.nota3) / 3;
+            }
+
+            aprobado() {
+                return (this.promedio() >= 5);
+            }
+        }
+
+        var listaAlumnos = new Array();
+        function registrar() {
+            var codigo = document.getElementById("codigo").value;
+            var nombre = document.getElementById("nombre").value;
+            var nota1 = document.getElementById("nota1").value;
+            var nota2 = document.getElementById("nota2").value;
+            var nota3 = document.getElementById("nota3").value;
+
+            if (codigo != "" && nombre != "" && nota1 != "" && nota2 != "" && nota3 != "") {
+                if (parseFloat(nota1) >= 0 && parseFloat(nota1) <= 10 &&
+                    parseFloat(nota2) >= 0 && parseFloat(nota2) <= 10 &&
+                    parseFloat(nota3) >= 0 && parseFloat(nota3) <= 10) {
+
+                    var a = new Alumno();
+                    a.codigo = codigo;
+                    a.nombre = nombre;
+                    a.nota1 = parseFloat(nota1);
+                    a.nota2 = parseFloat(nota2);
+                    a.nota3 = parseFloat(nota3);
+                    listaAlumnos.push(a);
+                    limpiar();
+                    actualizar();
+                }
+            }
+            return false;
+        }
+
+        function limpiar(){
+            document.getElementById("codigo").value = "";
+            document.getElementById("nombre").value = "";
+            document.getElementById("nota1").value = "";
+            document.getElementById("nota2").value = "";
+            document.getElementById("nota3").value = "";
+        }
+
+        function actualizar() {
+            var salida = 'Cálculo de notas de alumnos <br><table border="1">' +
+                '<tr>' + '<th>Codigo</th>' +
+                '<th>Nombre</th>' +
+                '<th>Nota 1</th>' +
+                '<th>Nota 2</th>' +
+                '<th>Nota 3</th>' +
+                '<th>Promedio</th>' +
+                '<th>Estado</th>' + '</tr>';
+
+            listaAlumnos.forEach(a => {
+                salida += '<tr>' +
+                    '<td>' + a.codigo + '</td>' +
+                    '<td>' + a.nombre + '</td>' +
+                    '<td>' + a.nota1 + '</td>' +
+                    '<td>' + a.nota2 + '</td>' +
+                    '<td>' + a.nota3 + '</td>' +
+                    '<td>' + a.promedio() + '</td>';
+                if (a.aprobado()) {
+                    salida += '<td>Aprobado</td>' + '</tr>';
+                } else {
+                    salida += '<td>Desaprobado</td>' + '</tr>';
+                }
+
+            });
+
+            document.getElementById("demo").innerHTML = salida;
+        }
+
+        function cambiar_color() {
+            var arreglo = ["red", "blue", "black", "green"];
+            var aleatorio = Math.floor(Math.random() * 3);
+            document.getElementById("color").style.color = arreglo[aleatorio];
+        }
+
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+        }
+
+    </script>
+</body>
+
+</html>
