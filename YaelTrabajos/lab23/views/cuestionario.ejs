@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <%- include('includes/header.ejs') %>
+    <div class="container">
+      <br />
+      <div class="card">
+        <div class="card-header">
+          ¿Qué importancia tiene AJAX en el desarrollo de RIA's (Rich Internet
+          Applications?
+        </div>
+        <div class="card-body">
+          <p>Respondere despues</p>
+        </div>
+      </div>
+      <br>
+      <div class="card">
+        <div class="card-header">
+          ¿Qué implicaciones de seguridad tiene AJAX? ¿Dónde se deben hacer las validaciones de seguridad, del lado del
+          cliente o del lado del servidor?
+        </div>
+        <div class="card-body">
+          <p>
+            Uno de los retos principales para lasaplicaciones de AJAX es que al trasladar el código al cliente se
+            involucrauna gran cantidad de formatos de datos, protocolos, analizadores eintérpretes; además cada
+            framework de AJAX tiene sus propios formatos.El tamaño de la superficie de ataque que presenta una
+            aplicaciónproporciona a un atacante diferentes maneras de causar algún daño a lasaplicaciones o a los
+            usuarios. Mientras más tecnologías se utilicen, masgrande será la superficie de ataque. Esto arroja formas
+            adicionales deinyectar potencialmente contenido malicioso.
+          </p>
+          <p>Las validaciones se deben hacer idealmente en los dos, y si sólo puedo elegir una, definitivamente del lado
+            servidor.</p>
+        </div>
+      </div>
+      <br>
+      <div class="card">
+        <div class="card-header">
+          ¿Qué es JSON?
+        </div>
+        <div class="card-body">
+          <p>JSON es el acrónimo para JavaScript Object Notation, y aunque su nombre lo diga, no es necesariamente parte
+            de JavaScript, de hecho es un estándar basado en texto plano para el intercambio de información, por lo que
+            se usa en muchos sistemas que requieren mostrar o enviar información para ser interpretada por otros
+            sistemas, la ventaja de JSON al ser un formato que es independiente de cualquier lenguaje de programación,
+            es que los servicios que comparten información por éste método, no necesitan hablar el mismo idioma, es
+            decir, el emisor puede ser Java y el receptor PHP, cada lenguaje tiene su propia librería para codificar y
+            decodificar cadenas de JSON.</p>
+        </div>
+      </div>
+    </div>
+    <%- include('includes/footer.ejs') %>
+</body>
+
+</html>
