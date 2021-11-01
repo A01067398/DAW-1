@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <%- include('includes/header.ejs') %>
+    <div class="container">
+        <br>
+        <br>
+        <a class="btn btn-danger" href="/">Volver</a>
+        <br><br>
+        <div id="todos">
+            <table class="table">
+                <thead>
+                    <th>Código</th>
+                    <th>Nombres</th>
+                    <th>Apellidos</th>
+                </thead>
+                <tbody>
+                    <% empleados.forEach(item =>{ %>
+                    <tr>
+                        <td><%= item.codigo %></td>
+                        <td><%= item.nombres %></td>
+                        <td><%= item.apellidos %></td>
+                    </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <%- include('includes/footer.ejs') %>
+
+    
+</body>
+</html>
