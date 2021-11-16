@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <%- include('includes/header.ejs') %>
+    <div class="container">
+      <br />
+      <div class="card">
+        <div class="card-header">
+          ¿Dónde se utilizó Ajax?
+        </div>
+        <div class="card-body">
+          <p>Se utilizó AJAX en el listado de los empleados y el registro de un empleado. Se puede acceder desde el menu
+            -> Empleados</p>
+        </div>
+      </div>
+      <br>
+
+      <div class="card">
+        <div class="card-header">
+          Elabora un diagrama y explica cómo funciona AJAX.
+        </div>
+        <div class="card-body text-center">
+          <img src="img/funcionamiento-ajax.png" alt="">
+        </div>
+      </div>
+      <br>
+
+      <div class="card">
+        <div class="card-header">
+          ¿Qué alternativas a jQuery existen?
+        </div>
+        <div class="card-body">
+          <p>
+            <strong>1. Cash</strong><br>
+            Cash proporciona una sintaxis de estilo jQuery. La característica sobresaliente de Cash es su tamaño de
+            archivo absurdamente pequeño que llega a alrededor de 8KB en total.<br>
+            Cash se basa en gran medida en los estándares modernos de JavaScript (posterior a ES5) para lograr muchas de
+            las mismas características que se encuentran en jQuery.<br>
+            Además, al aprovechar la biblioteca de JavaScript estándar ya funcional y optimizada<br>
+            <strong>Ventajas</strong>
+          <ul>
+            <li>No ocupa mucho espacio de almacenamiento.</li>
+            <li>Incluye un módulo de animación personalizado.</li>
+            <li>Puedes continuar los proyectos que estabas ejecutando con jQuery.</li>
+          </ul>
+          <strong>Desventajas</strong>
+          <ul>
+            <li>No es compatible con los navegadores muy antiguos.</li>
+          </ul>
+          </p>
+
+          <p>
+            <strong>2. SyncFusion Essential JS2</strong><br>
+            SyncFusion JS2 es un moderno conjunto de herramientas de control de la interfaz de usuario de JavaScript que
+            se centra en gran medida en el rendimiento y no depende de dependencias externas.<br>
+            La biblioteca en sí es sensible y fácil de tocar, lo que significa que hará que los controles funcionen bien
+            en dispositivos móviles.<br>
+
+            <strong>Ventajas</strong>
+          <ul>
+            <li>La biblioteca es sumamente fácil de tocar.</li>
+            <li>Tiene muchos controles integrados.</li>
+            <li>Posee herramientas modernas.</li>
+          </ul>
+          <strong>Desventajas</strong>
+          <ul>
+            <li>Tendrás que depender de otras bibliotecas.</li>
+          </ul>
+          </p>
+
+        </div>
+      </div>
+      <br>
+
+      <div class="card">
+        <div class="card-header">
+          ¿Qué es una promesa en js?
+        </div>
+        <div class="card-body">
+          <p>
+            El objeto Promise (Promesa) es usado para computaciones asíncronas. Una promesa representa un valor que
+            puede estar disponible ahora, en el futuro, o nunca.<br>
+            Una Promesa es un proxy para un valor no necesariamente conocido en el momento que es creada la promesa.
+            Permite asociar manejadores que actuarán asincrónicamente sobre un eventual valor en caso de éxito, o la
+            razón de falla en caso de una falla. Esto permite que métodos asíncronos devuelvan valores como si fueran
+            síncronos: en vez de inmediatamente retornar el valor final, el método asíncrono devuelve una promesa de
+            suministrar el valor en algún momento en el futuro.
+          </p>
+        </div>
+      </div>
+      <br>
+
+      <div class="card">
+        <div class="card-header">
+          ¿Cómo funcionan async y await?
+        </div>
+        <div class="card-body">
+          <p>
+            Las funciones asíncronas utilizan la sintaxis async y await para esperar que una promesa sea resuelta.<br>
+            Async/Await es una propuesta para extender la sintaxis de javaScript con las palabras reservadas async y
+            await, cuyo uso permitirá -cuando se estandarice- tratar las funciones que devuelven promesas en nuestro
+            código como si fueran funciones síncronas que devuelven directamente valores en vez de promesas.
+          </p>
+        </div>
+      </div>
+      <br><br>
+    </div>
+    <%- include('includes/footer.ejs') %>
+</body>
+
+</html>
